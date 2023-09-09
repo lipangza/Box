@@ -185,6 +185,7 @@
 						android:focusable="true"
                         android:gravity="center"
 						android:text="@string/det_change_source"
+						android:textColor="@android:color/white"
 						android:textSize="@dimen/vs_20" />
 
                     <TextView
