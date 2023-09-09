@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">熊窝</string>
+    <string name="app_name">TVBox</string>
     <string name="app_home">Home</string>
     <string name="app_source"></string>
 
@@ -45,7 +45,7 @@
     <string name="det_actor">Cast</string>
     <string name="det_dir">Director</string>
     <string name="det_des"></string>
-	<string name="det_change_source">换源</string>
+	<string name="det_change_source">Change Source</string>
 
     // Settings Menu Page //
     <string name="mn_config">Configuration Address</string>
