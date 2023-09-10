@@ -18,6 +18,14 @@ jobs:
         run: |
           chmod +x gradlew
           ./gradlew assemblerelease --build-cache --parallel --daemon --warning-mode all
+
+
+      - name: Cache
+        uses: tvbox/cache
+        with:
+           ccache: 'true'
+           prefix: ${{ github.workspace }}/tvbox
+
       - name: Prepare App
         run: |
           mkdir -p ${{ github.workspace }}/apk/
