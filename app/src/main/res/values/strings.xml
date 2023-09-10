@@ -45,7 +45,6 @@
     <string name="det_actor">Cast</string>
     <string name="det_dir">Director</string>
     <string name="det_des"></string>
-	<string name="det_change_source">Change Source</string>
 
     // Settings Menu Page //
     <string name="mn_config">Configuration Address</string>

@@ -45,10 +45,7 @@
     <string name="det_actor">演员</string>
     <string name="det_dir">导演</string>
     <string name="det_des"></string>
-    <string name="det_change_source">换源</string>
-	
-	
-	
+
     // Settings Menu Page //
     <string name="mn_config">配置地址</string>
     <string name="mn_home">数据源</string>

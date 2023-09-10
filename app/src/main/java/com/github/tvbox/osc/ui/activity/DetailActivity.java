@@ -108,7 +108,6 @@ public class DetailActivity extends BaseActivity {
     private TextView tvDirector;
     private TextView tvDes;
     private TextView tvPlay;
-	private TextView tvChangeSource;
     private TextView tvSort;
     private TextView tvPush;
     private TextView tvQuickSearch;
@@ -170,7 +169,6 @@ public class DetailActivity extends BaseActivity {
         tvPush = findViewById(R.id.tvPush);
         tvCollect = findViewById(R.id.tvCollect);
         tvQuickSearch = findViewById(R.id.tvQuickSearch);
-		tvChangeSource = findViewById(R.id.tvChangeSource);
         tvPlayUrl = findViewById(R.id.tvPlayUrl);
         mEmptyPlayList = findViewById(R.id.mEmptyPlaylist);
         mGridView = findViewById(R.id.mGridView);
@@ -247,37 +245,6 @@ public class DetailActivity extends BaseActivity {
             }
         });
         tvQuickSearch.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startQuickSearch();
-                QuickSearchDialog quickSearchDialog = new QuickSearchDialog(DetailActivity.this);
-                EventBus.getDefault().post(new RefreshEvent(RefreshEvent.TYPE_QUICK_SEARCH, quickSearchData));
-                EventBus.getDefault().post(new RefreshEvent(RefreshEvent.TYPE_QUICK_SEARCH_WORD, quickSearchWord));
-                quickSearchDialog.show();
-                if (pauseRunnable != null && pauseRunnable.size() > 0) {
-                    searchExecutorService = Executors.newFixedThreadPool(5);
-                    for (Runnable runnable : pauseRunnable) {
-                        searchExecutorService.execute(runnable);
-                    }
-                    pauseRunnable.clear();
-                    pauseRunnable = null;
-                }
-                quickSearchDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
-                    @Override
-                    public void onDismiss(DialogInterface dialog) {
-                        try {
-                            if (searchExecutorService != null) {
-                                pauseRunnable = searchExecutorService.shutdownNow();
-                                searchExecutorService = null;
-                            }
-                        } catch (Throwable th) {
-                            th.printStackTrace();
-                        }
-                    }
-                });
-            }
-        });
-		tvChangeSource.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startQuickSearch();
@@ -1033,7 +1000,6 @@ public class DetailActivity extends BaseActivity {
         tvPush.setFocusable(!fullWindows);
         tvCollect.setFocusable(!fullWindows);
         tvQuickSearch.setFocusable(!fullWindows);
-		tvChangeSource.setFocusable(!fullWindows);
         toggleSubtitleTextSize();
 
         // Hide navbar only when video playing on full window, else show navbar
