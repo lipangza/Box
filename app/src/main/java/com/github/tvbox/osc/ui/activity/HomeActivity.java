@@ -240,7 +240,8 @@ public class HomeActivity extends BaseActivity {
                 FileUtils.recursiveDelete(dir);
                 dir = getExternalCacheDir();
                 FileUtils.recursiveDelete(dir);
-                Toast.makeText(HomeActivity.this, getString(R.string.tvHomeApi), Toast.LENGTH_SHORT).show();
+				tvHomeApi = findViewById(R.id.tvHomeApi);
+                tvHomeApi.setText(ApiConfig.get().getHomeSourceBean().getName());
             }
         });
         tvName.setOnLongClickListener(new View.OnLongClickListener() {
