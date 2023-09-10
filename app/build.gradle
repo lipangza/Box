@@ -27,6 +27,17 @@ android {
         exclude 'META-INF/DEPENDENCIES'
     }
 
+
+    signingConfigs {
+        sign {
+            keyAlias '220721'
+            keyPassword '220721'
+            storeFile file('test.jks')
+            storePassword '220721'
+        }
+    }
+
+
     buildTypes {
         debug {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
