@@ -29,11 +29,13 @@ android {
 
 
     signingConfigs {
-        sign {
-            keyAlias '220721'
-            keyPassword '220721'
+        config {
+            keyAlias 'key0'
+            keyPassword '123456'
             storeFile file('test.jks')
-            storePassword '220721'
+            storePassword '123456'
+            v1SigningEnabled true
+            v2SigningEnabled true
         }
     }
 
