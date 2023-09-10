@@ -877,19 +877,6 @@
                     android:src="@drawable/v_aspect" />
 
                 <TextView
-                    android:id="@+id/tvQuickSearch"
-                    android:layout_width="@dimen/vs_120"
-                    android:layout_height="@dimen/vs_40"
-                    android:layout_marginEnd="@dimen/vs_10"
-                    android:layout_marginRight="@dimen/vs_10"
-                    android:background="@drawable/button_detail_all"
-                    android:focusable="true"
-                    android:gravity="center"
-                    android:text="@string/det_search"
-                    android:textColor="@android:color/white"
-                    android:textSize="@dimen/vs_20" />					
-
-                <TextView
                     android:id="@+id/play_scale_txt"
                     android:layout_width="@dimen/vs_45"
                     android:layout_height="match_parent"
